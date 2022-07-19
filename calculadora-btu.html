@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png">
+    <title>Calculadora de BTUS</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-image: url(https://mywholewall.com/wp-content/uploads/2018/12/1090336.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .formulario{
+            width: 30%;
+            margin: 100px auto;
+            background-color: gainsboro;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px 3px rgba(116, 115, 115, 0.3);
+            
+        }
+        .formulario h1{
+            text-align: center;
+        }
+        p{
+            margin-bottom: 0.1%;
+        }
+        .formulario input{
+            width: 90%;
+            margin: 10px 0px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+        .formulario button{
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            margin-left: 40%;
+            border-radius: 10px;
+        }
+        .formulario button:hover{
+            cursor: pointer;
+            background-color: darkgray;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formulario">
+        <h1>Calculadora de BTUS</h1>
+    
+        <div>
+            <p>Área do cômodo(m²)</p>
+            <input type="number" placeholder="Digite a área do cômodo" id="areacomodo">
+        </div>
+        <div>
+            <p>Quantidade de pessoas no cômodo</p>
+            <input type="number" placeholder="Digite a quantidade de pessoas" id="qtdpessoas">
+        </div>
+        <div>
+            <p>Quantidade de eletroeletrônicos</p>
+            <input type="number" placeholder="Digite a quantidade de eletr" id="qtdeletronicos">
+        </div>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+</body>
+
+<script>
+    function calcular(){
+    let n1String = document.getElementById("areacomodo").value
+    let n2String = document.getElementById("qtdpessoas").value
+    let n3String = document.getElementById("qtdeletronicos").value
+
+    let n1Convertido = parseFloat(n1String)
+    let n2Convertido = parseFloat(n2String)
+    let n3Convertido = parseFloat(n3String)
+
+    let calculo = ((n1Convertido*600)+(n2Convertido*600)+(n3Convertido*600))
+
+    window.alert("Quantidade de BTUS necessária é: " + calculo)
+    }
+</script>
+</html>
